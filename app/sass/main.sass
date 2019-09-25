@@ -1,0 +1,939 @@
+@import "fonts"
+@import "vars"
+
+*
+  box-sizing: border-box
+
+html, body
+  font-family: 'Proxima Nova Lt'
+  font-weight: 300
+  font-size: 16px
+  color: $main-text-color
+
+body
+  overflow-x: hidden
+
+body, ul, ol
+  margin: 0
+  padding: 0
+
+.container
+  max-width: 960px
+  margin: 0 auto
+  padding: 0 10px
+
+.main-title
+  font-family: 'Proxima Nova Bold'
+  font-weight: bold
+  font-size: 2rem
+  padding: 80px 0 25px
+  @media only screen and (max-width: 812px)
+    padding-top: 60px
+  @media only screen and (max-width: 767px)
+    text-align: center
+  @media only screen and (max-width: 590px)
+    font-size: 1rem
+  @media only screen and (max-width: 400px)
+    font-size: .8rem
+  p
+    font-family: 'Proxima Nova Th'
+    font-weight: 800
+    text-transform: uppercase
+    font-size: 48px
+    line-height: 50px
+    margin: 0
+    @media only screen and (max-width: 590px)
+      font-size: 28px
+    @media only screen and (max-width: 400px)
+      font-size: 24px
+
+.after-title
+  p
+    font-size: 24px
+    line-height: 32px
+    margin: 0
+    @media only screen and (max-width: 812px)
+      font-size: 20px
+      line-height: 28px
+    @media only screen and (max-width: 767px)
+      text-align: center
+    @media only screen and (max-width: 590px)
+      font-size: 16px
+      line-height: 22px
+    @media only screen and (max-width: 400px)
+      font-size: 14px
+      line-height: 20px
+  span
+    +bold
+
+.secondary-title
+  +bold
+  font-size: 30px
+  line-height: 36px
+  text-align: center
+  @media only screen and (max-width: 767px)
+    font-size: 20px
+    line-height: 28px
+  @media only screen and (max-width: 480px)
+    font-size: 16px
+    line-height: 24px
+
+h5
+  +bold
+  font-size: 14px
+  line-height: 20px
+  @media only screen and (max-width: 767px)
+    font-size: 10px
+    line-height: 16px
+
+.button
+  font-weight: bold
+  letter-spacing: normal
+  display: block
+  text-align: center
+  text-decoration: none
+  color: white
+  border-radius: 5px
+  border: 1px solid transparent
+  +transition
+  &:hover
+    text-decoration: none
+    background: #ddd
+    border: 1px solid #3c3
+    color: #3c3
+
+.hidden
+  display: none
+
+.invisible
+  opacity: 0
+
+.cfix
+  content: ""
+  display: table
+  clear: both
+
+.header
+  font-size: 14px
+  letter-spacing: .02em
+  line-height: 22px
+  &__row
+    padding: 10px 0 20px
+    @media only screen and (max-width: 812px)
+      padding: 5px 0
+    &__second
+      @media only screen and (max-width: 812px)
+        padding: 0
+    &__second
+      padding-bottom: 11px
+  &__phone
+    +bold
+    padding-top: 4px
+    a
+      +a-design
+    &__add
+      font-size: 18px
+      margin-right: 6%
+      padding: 5px 0
+      @media only screen and (max-width: 812px)
+        font-size: 14px
+      @media only screen and (max-width: 496px)
+        display: none
+  &__nav
+    padding: 4px 10px
+    @media only screen and (max-width: 410px)
+      width: 50%
+    &__navigation
+      @media only screen and (max-width: 767px)
+        display: none
+    &__list
+      list-style: none
+      display: flex
+      justify-content: space-around
+    &__item
+      display: inline-block
+    &__link
+      +a-design
+      +transition
+      &:hover
+        text-decoration: none
+        color: black
+        border-bottom: 1px dashed $main-text-color
+    &__adaptive
+      display: none
+      position: relative
+      margin-left: auto
+      width: 30px
+      height: 30px
+      border: 2px solid $main-text-color
+      border-radius: 5px
+      z-index: 2
+      cursor: pointer
+      top: -4px
+      @media only screen and (max-width: 767px)
+        display: block
+      @media only screen and (max-width: 600px)
+        height: 22px
+        width: 22px
+      &__line
+        margin: 5px auto
+        width: 70%
+        height: 2px
+        background: $main-text-color
+        @media only screen and (max-width: 600px)
+          margin: 3px auto
+      &__menu
+        position: absolute
+        min-width: 160px
+        top: 35px
+        right: 0
+        z-index: 2
+        background: lighten($main-text-color, 10%)
+        border: 1px solid darken(white, 20%)
+        border-radius: 5px
+      &__list
+        list-style: none
+        display: flex
+        justify-content: space-around
+        flex-direction: column
+        padding: 5px 10px 15px 20px
+      &__item
+        display: block
+        margin-top: 10px
+      &__link
+        text-decoration: none
+        +transition
+        color: white
+        &:hover
+          text-decoration: none
+          color: #0f5
+          border-bottom: 1px solid #0f5
+  &__action
+    padding-left: 10px
+    @media only screen and (max-width: 560px)
+      padding-left: 0
+  &__button
+    font-family: 'Proxima Nova Bold'
+    font-size: 12px
+    line-height: 22px
+    padding: 4px 0
+    background: #c00
+    height: 30px
+    width: 100%
+    @media only screen and (max-width: 600px)
+      font-size: 8px
+      line-height: 14px
+      height: 22px
+    @media only screen and (max-width: 520px)
+      font-family: 'Proxima Nova Rg'
+      font-weight: normal
+      width: 75px
+    @media only screen and (max-width: 410px)
+      display: none
+  &__logo
+    padding: 10px 0
+  &__text
+    text-align: center
+    padding: 7px 0
+    @media only screen and (max-width: 767px)
+      display: none
+  &__link
+    display: flex
+    justify-content: flex-end
+    padding-top: 15px
+  &__icon
+    height: 40px
+    width: 40px
+    border-radius: 5px
+    border: 1px solid #c33
+    text-align: center
+    padding: 5px 0
+    margin-left: 3%
+    a
+      display: block
+      width: 100%
+      height: 100%
+
+.first
+  color: white
+  background: url("../img/main-bg.jpg") no-repeat center top / cover
+  height: 610px
+  @media only screen and (max-width: 812px)
+    height: 550px
+  @media only screen and (max-width: 590px)
+    height: 450px
+  &__row
+    @media only screen and (max-width: 1020px)
+      padding-left: 43px
+    @media only screen and (max-width: 550px)
+      padding-left: 15px
+  &__action
+    padding: 50px 10px 0 0
+  &__button
+    +bold
+    font-size: 18px
+    line-height: 26px
+    background: #c33
+    height: 65px
+    padding: 18px 0
+    &:hover
+      border: 1px solid transparent
+    @media only screen and (max-width: 812px)
+      font-size: 14px
+    @media only screen and (max-width: 767px)
+      width: 60%
+      margin: 0 20%
+    @media only screen and (max-width: 640px)
+      font-size: 10px
+      height: 40px
+      padding: 5px 0
+
+.services
+  &__title
+    padding: 80px 0 40px
+    @media only screen and (max-width: 812px)
+      padding: 60px 0 20px
+  &__row
+    padding-bottom: 60px
+  &__item
+    display: flex
+    justify-content: flex-start
+    padding: 50px 0
+    @media only screen and (max-width: 777px)
+      width: 100%
+    @media only screen and (max-width: 573px)
+      padding: 10% 25%
+    @media only screen and (max-width: 435px)
+      padding: 10% 15%
+  &__img
+      padding-left: 30px
+      @media only screen and (max-width: 777px)
+        padding-left: 40%
+      @media only screen and (max-width: 572px)
+        padding-left: 0
+  &__text
+    +a-design
+    padding-left: 20px
+    line-height: 22px
+    display: block
+    +transition
+    &:hover
+      text-decoration: none
+      cursor: pointer
+      color: red
+    p
+      margin: 0
+
+.about
+  text-align: center
+  color: white
+  background: url("../img/second-bg.jpg") no-repeat center top / cover
+  @media only screen and (max-width: 767px)
+    font-size: 12px
+  @media only screen and (max-width: 480px)
+    font-size: 10px
+  &__title
+    padding-top: 80px
+    @media only screen and (max-width: 812px)
+      padding-top: 40px
+  &__row
+    padding-bottom: 80px
+  &__text
+    padding: 50px
+    @media only screen and (max-width: 812px)
+      padding: 25px
+  &__bold
+    +bold
+    font-size: 48px
+    margin: 0
+
+.process
+  text-align: center
+  &__row
+    padding-bottom: 150px
+    @media only screen and (max-width: 812px)
+      padding-bottom: 75px
+  &__title
+    padding: 80px 0 20px
+    @media only screen and (max-width: 812px)
+      padding-top: 60px
+  &__img
+    padding: 50px
+    @media only screen and (max-width: 812px)
+      padding: 25px
+    img
+      margin: 0 auto
+  &__text
+    padding: 0 20px
+    &__m6
+      padding-top: 6px
+      @media only screen and (max-width: 812px)
+        padding-top: 0
+    &__m18
+      padding-top: 18px
+      @media only screen and (max-width: 812px)
+        padding-top: 0
+      +bold
+
+.preferences
+  &__title
+    padding: 20px 70px 20px
+  &__wrap
+      font-size: 13px
+      color: black
+      line-height: 45px
+      @media only screen and (max-width: 767px)
+        font-size: 10px
+        line-height: 37px
+      @media only screen and (max-width: 650px)
+        font-size: 8px
+        line-height: 18px
+  &__item
+    text-align: center
+    &__1
+      padding: 85px 0 0 5px
+      text-align: right
+    &__2
+      padding: 30px 0 0 30px
+    &__3
+      padding: 40px 40px 0 0
+      @media only screen and (max-width: 970px)
+        padding: 40px 0 0 0
+
+  &__fill
+    background: #3c3
+    color: white
+    padding: 10px 0
+  &__summary
+    padding: 0 0 100px 10px
+    &__title
+      h5
+        @media only screen and (max-width: 767px)
+          text-align: center
+          font-size: 16px
+        @media only screen and (max-width: 650px)
+          font-size: 12px
+    &__wrap
+      font-size: 16px
+      line-height: 45px
+      padding-bottom: 2px
+      @media only screen and (max-width: 767px)
+        font-size: 12px
+        line-height: 35px
+      @media only screen and (max-width: 650px)
+        font-size: 8px
+        line-height: 16px
+    &__item
+      display: flex
+      justify-content: flex-start
+      padding-bottom: 20px
+    &__text
+      padding: 3px 0 0 25px
+    &__item
+      @media only screen and (max-width: 767px)
+        padding-left: 36%
+    &__number
+      +bold
+  &__button
+    background: $accent
+    height: 65px
+    font-size: 18px
+    line-height: 40px
+    padding-top: 12px
+    @media only screen and (max-width: 767px)
+      font-size: 12px
+      height: 50px
+      padding-top: 2px
+      width: 50%
+      margin: 0 auto
+
+.consult
+  text-align: left
+  color: white
+  background: url("../img/third-bg.jpg") no-repeat center top / cover
+  font-family: 'Muller'
+  font-size: 18px
+  font-weight: 300
+  @media only screen and (max-width: 732px)
+    font-size: 12px
+  @media only screen and (max-width: 575px)
+    font-size: 12px
+  &__row
+    padding-bottom: 100px
+    @media only screen and (max-width: 812px)
+      padding-bottom: 65px
+  &__title
+    background: url("../img/android-app-store.png") no-repeat 90% 85%
+    padding: 90px 0 40px
+    @media only screen and (max-width: 994px)
+      padding: 50px 20px 40px
+    @media only screen and (max-width: 575px)
+      background-size: 20%
+      background-position: 90% 55%
+    @media only screen and (max-width: 400px)
+      background: none
+    h2
+      text-align: left
+  &__text
+    background: url("../img/ios-app-store.png") no-repeat 90% 10%
+    @media only screen and (max-width: 575px)
+      background-size: 20%
+      background-position: 90% 55%
+    @media only screen and (max-width: 400px)
+      background: none
+  &__list
+    @media only screen and (max-width: 1038px)
+      list-style: none
+    &__item
+      padding: 10px 0
+      width: 59%
+      color: $accent
+      font-weight: 500
+      span
+        font-weight: 300
+        display: block
+        color: white
+        padding: 0 25px
+        a
+          color: white
+          text-decoration: none
+          border-bottom: 1px solid white
+
+.feedback
+  +muller
+  font-size: 13px
+  &__title
+    padding: 90px 0 70px
+    @media only screen and (max-width: 812px)
+      padding: 45px 0 35px
+  &__tabs
+    position: relative
+    min-height: 500px
+    @media only screen and (max-width: 812px)
+      min-height: 400px
+    input
+      position: absolute
+      display: none
+      &:checked + label
+        border: 2px solid $accent
+        color: $accent
+    label
+      display: inline-block
+      height: 35px
+      margin-bottom: 70px
+      font-weight: 600
+      font-size: 14px
+      text-transform: uppercase
+      text-align: center
+      border: 2px solid transparent
+      border-radius: 5px
+      padding: 8px 10px
+      &:hover
+        color: $accent
+        cursor: pointer
+      @media only screen and (max-width: 912px)
+        margin-bottom: 50px
+      @media only screen and (max-width: 767px)
+        margin-bottom: 30px
+      @media only screen and (max-width: 692px)
+        font-size: 10px
+        height: 25px
+        padding: 6px
+      @media only screen and (max-width: 563px)
+        padding: 6px 3px
+        font-size: 8px
+      @media only screen and (max-width: 367px)
+        padding: 8px 3px
+        font-size: 6px
+  &__tab
+    position: absolute
+    opacity: 0
+    transition: all 1s ease-in
+    z-index: -1
+  &__content
+    position: relative
+    padding: 10px
+    animation-duration: 1s
+    animation-fill-mode: both
+    animation-name: fadeIn
+    &:before
+      position: absolute
+      content: ""
+      height: 25px
+      width: 25px
+      background: url("../img/icon.png") no-repeat center center / cover
+      left: 30px
+      top: 175px
+      @media only screen and (max-width: 930px)
+        top: 150px
+      @media only screen and (max-width: 830px)
+        top: 135px
+      @media only screen and (max-width: 767px)
+        top: 200px
+      @media only screen and (max-width: 710px)
+        top: 180px
+      @media only screen and (max-width: 650px)
+        top: 150px
+      @media only screen and (max-width: 560px)
+        top: 135px
+      @media only screen and (max-width: 510px)
+        top: 115px
+      @media only screen and (max-width: 460px)
+        top: 90px
+      @media only screen and (max-width: 385px)
+        top: 75px
+      @media only screen and (max-width: 340px)
+        display: none
+    &__link
+      +a-design
+      &:hover
+        text-decoration: none
+        color: $accent
+        border-bottom: 1px solid #f99
+  &__label
+    &__1
+      margin-left: 20%
+      @media only screen and (max-width: 950px)
+        margin-left: 15%
+      @media only screen and (max-width: 850px)
+        margin-left: 10%
+      @media only screen and (max-width: 730px)
+        margin-left: 5%
+      @media only screen and (max-width: 692px)
+        margin-left: 10%
+      @media only screen and (max-width: 563px)
+        margin-left: 15%
+      @media only screen and (max-width: 430px)
+        margin-left: 5%
+
+#feedback-tab-1:checked ~ #feedback-content-tab-1,
+#feedback-tab-2:checked ~ #feedback-content-tab-2,
+#feedback-tab-3:checked ~ #feedback-content-tab-3,
+#feedback-tab-4:checked ~ #feedback-content-tab-4,
+#feedback-tab-5:checked ~ #feedback-content-tab-5,
+#feedback-tab-6:checked ~ #feedback-content-tab-6,
+  opacity: 1
+  z-index: 1
+
+// CSS-стили для навигации карусели
+// .prev
+//   position: absolute
+//   left: -50px
+//   top: 200px
+//   &:hover
+//     cursor: pointer
+// .next
+//   position: absolute
+//   right: -50px
+//   top: 200px
+//   &:hover
+//     cursor: pointer
+
+.partners
+  +muller
+  font-size: 12px
+  text-align: center
+  &__title
+    padding: 20px 0 65px
+    @media only screen and (max-width: 767px)
+      padding: 50px 0 55px
+    h2
+      letter-spacing: .06em
+  &__item
+    position: relative
+    @media only screen and (max-width: 550px)
+      width: 100%
+  &__logo
+    z-index: 1
+    padding-bottom: 100px
+    @media only screen and (max-width: 812px)
+      padding-bottom: 40px
+  &__text
+    letter-spacing: .03em
+    color: white
+    background: #3c3
+    padding: 20px
+    margin-right: 10px
+    z-index: 2
+    position: absolute
+    top: 0
+    opacity: 0
+    +transition
+    &:hover
+      opacity: 1
+
+.tarification
+  +muller
+  font-size: 11px
+  @media only screen and (max-width: 767px)
+    text-align: center
+  &__title
+    padding: 100px 0 25px
+    @media only screen and (max-width: 812px)
+      padding-top: 60px
+    h2
+      letter-spacing: .04em
+      text-align: left
+      @media only screen and (max-width: 767px)
+        text-align: center
+    p
+      font-family: 'Muller'
+      font-weight: bold
+      font-size: 18px
+      line-height: 25px
+      @media only screen and (max-width: 767px)
+        font-size: 12px
+  &__choice
+    font-size: 16px
+  &__controls
+    padding-bottom: 80px
+    @media only screen and (max-width: 812px)
+      padding-bottom: 60px
+  &__compare
+    font-family: 'Muller'
+    font-weight: 500
+    font-size: 14px
+    text-transform: uppercase
+    +a-design
+    &:hover
+      text-decoration: none
+      color: $main-text-color
+  &__list
+    font-family: 'Muller'
+    font-weight: 500
+    font-size: 14px
+    text-transform: uppercase
+    text-align: center
+    display: inline-block
+    border: 2px solid $accent
+    color: $accent
+    border-radius: 5px
+    height: 35px
+    width: 95px
+    padding-top: 8px
+    text-decoration: none
+    margin-left: 23px
+    &:hover
+      text-decoration: none
+      color: $accent
+  &__subtitle
+    +muller
+    color: black
+    font-size: 20px
+    text-align: center
+    @media only screen and (max-width: 767px)
+      padding-top: 50px
+    p
+      font-weight: bold
+      margin: 0
+  &__img
+    padding: 25px 0
+    img
+      margin: 0 auto
+  &__text
+    color: black
+    padding: 0 30px
+    @media only screen and (max-width: 767px)
+      padding: 0 20%
+  &__table
+    border: 0
+    width: 100%
+  &__table__col-left
+    height: 40px
+    text-align: left
+    vertical-align: center
+    +muller
+    font-size: 11px
+  &__table__col-right
+    height: 40px
+    font-family: 'Muller'
+    font-weight: 500
+    font-size: 11px
+    text-align: right
+    vertical-align: center
+  &__app
+    +muller
+    font-size: 13px
+    text-align: left
+    padding: 12px 0
+  &__price
+    font-size: 13px
+    text-align: center
+    padding: 40px 0 30px
+    p
+      font-family: 'Muller'
+      font-weight: bold
+      font-size: 24px
+      line-height: 40px
+      margin: 5px
+  &__buttons
+    padding-bottom: 140px
+    @media only screen and (max-width: 812px)
+      padding-bottom: 0
+    &__button
+      height: 55px
+      width: 70%
+      margin-left: 15%
+      font-family: 'Muller'
+      font-weight: bold
+      font-size: 18px
+      line-height: 40px
+      padding-top: 7px
+      margin-bottom: 15px
+      @media only screen and (max-width: 767px)
+        margin-left: 25%
+        width: 50%
+        &:last-child
+          margin-bottom: 70px
+      &-1
+        background: #f33
+      &-2
+        background: #090
+      &-3
+        background: #039
+      &-4
+        background: #999
+
+.contacts
+  @media only screen and (max-width: 767px)
+    text-align: center
+  &__wrap
+    padding: 150px 0 65px
+    @media only screen and (max-width: 812px)
+      padding: 100px 50px
+  &__controls
+    &__title
+      font-family: 'Muller'
+      font-weight: bold
+      font-size: 18px
+      line-height: 23px
+      padding-bottom: 5px
+    p
+      margin-top: 5px
+  &__form
+    label, input
+      display: block
+    label
+      text-align: left
+      @media only screen and (max-width: 767px)
+        text-align: center
+        width: 100%
+      +muller
+      font-size: 14px
+      line-height: 22px
+      padding: 15px 0
+    input, textarea
+      width: 50%
+      border: 1px solid transparent
+      @media only screen and (max-width: 767px)
+        width: 70%
+        margin: 0 auto
+      @media only screen and (max-width: 520px)
+        width: 100%
+      &:hover
+        border: 1px solid #0cc
+      &:focus
+        outline: none
+        border: 1px solid green
+    input
+      height: 30px
+    textarea
+      height: 60px
+      resize: none
+    &__button
+      margin: 30px 0 10px
+      background: #c00
+      height: 65px
+      width: 60%
+      font-family: "Muller"
+      font-weight: bold
+      font-size: 18px
+      line-height: 40px
+      @media only screen and (max-width: 888px)
+        font-size: 14px
+      @media only screen and (max-width: 767px)
+        margin: 0 auto
+      @media only screen and (max-width: 520px)
+        width: 100%
+      @media only screen and (max-width:350px)
+        font-size: 12px
+    span
+      +muller
+      font-size: 13px
+      padding-left: 8%
+      @media only screen and (max-width: 394px)
+        font-size: 10px
+        padding-left: 0
+  &__details
+    +muller
+    font-size: 13px
+    color: black
+    &__title
+      padding: 20px 0
+      @media only screen and (max-width: 767px)
+        padding: 80px 0 20px
+      h2
+        text-align: left
+        @media only screen and (max-width: 767px)
+          text-align: center
+    &__desc
+      line-height: 22px
+    &__phone
+      font-weight: bold
+      font-size: 17px
+      line-height: 22px
+      color: black
+      text-decoration: none
+      &:hover
+        color: black
+        text-decoration: none
+    &__email
+      font-weight: normal
+      font-size: 17px
+      line-height: 22px
+      text-decoration: none
+      color: black
+      &:hover
+        text-decoration: underline
+        color: black
+    &__shedule
+      font-weight: normal
+      font-size: 17px
+      line-height: 22px
+      span
+        display: block
+
+.footer
+  +muller
+  font-size: 13px
+  text-align: center
+  background: black
+  color: white
+  height: 135px
+  @media only screen and (max-width: 812px)
+    height: 80px
+  @media only screen and (max-width: 767px)
+    font-size: 10px
+  &__logo
+    padding-top: 45px
+    @media only screen and (max-width: 812px)
+      padding-top: 22px
+    @media only screen and (max-width: 668px)
+      width: 100%
+      padding: 25px 35%
+    @media only screen and (max-width: 394px)
+      padding: 30px 35%
+    &__creator
+      padding-top: 35px
+      @media only screen and (max-width: 812px)
+        padding-top: 11px
+      @media only screen and (max-width: 668px)
+        display: none
+  &__text
+    padding-top: 36px
+    @media only screen and (max-width: 812px)
+      padding-top: 12px
+    @media only screen and (max-width: 668px)
+      display: none
+    p
+      line-height: 40px
